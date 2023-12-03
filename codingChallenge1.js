@@ -26,15 +26,22 @@ eleCheck.addEventListener('click', function(){
     console.log(randomNumber);
     console.log(eleBoxVal);
     if(Number(eleBoxVal) === randomNumber){
-        eleStatus.innerHTML =`Correct 🎉`;
+        eleStatus.innerHTML =`Correct! 🎉`;
         maxScore.push(score);
         eleContainer.style.backgroundColor = 'green';
         eleNumber.innerHTML = `${randomNumber}`
-    }else{
+    }
+    else if(eleBoxVal === ''){
+        eleStatus.innerHTML =`No number! ⛔`;
+    }
+    else if(score===0){
+        eleStatus.innerHTML =`You lost the game! 🤦‍♂️`;
+    }
+    else{
         score --;
         eleContainer.style.backgroundColor = 'white';
         eleScore.innerHTML = `${score}`;
-        (eleBoxVal > randomNumber)? (eleStatus.innerHTML =`Too Hight 😅`) : (eleStatus.innerHTML =`Too Low 🤗`);
+        (eleBoxVal > randomNumber)? (eleStatus.innerHTML =`Too Hight! 😅`) : (eleStatus.innerHTML =`Too Low! 🤗`);
     }
 })
 

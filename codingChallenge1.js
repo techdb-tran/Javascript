@@ -13,10 +13,10 @@ eleHightScore.innerHTML = `${Math.max(...maxScore)}`;
 let randomNumber = 9;
 eleAgain.addEventListener('click', function(){
     eleContainer.style.backgroundColor = 'white';
-    randomNumber=Math.floor(20*Math.random());
+    randomNumber=Math.ceil(19*Math.random());
     document.querySelector('.box input[type="number"]').value= '';
     eleNumber.innerHTML =`?`;
-    eleStatus.innerHTML =`Start guessing...`
+    eleStatus.innerHTML =`Start guessing...👌`
     score = 20;
     eleScore.innerHTML = `${score}`;
     eleHightScore.innerHTML = `${Math.max(...maxScore)}`
@@ -26,7 +26,7 @@ eleCheck.addEventListener('click', function(){
     console.log(randomNumber);
     console.log(eleBoxVal);
     if(Number(eleBoxVal) === randomNumber){
-        eleStatus.innerHTML =`Correct`;
+        eleStatus.innerHTML =`Correct 🎉`;
         maxScore.push(score);
         eleContainer.style.backgroundColor = 'green';
         eleNumber.innerHTML = `${randomNumber}`
@@ -34,7 +34,7 @@ eleCheck.addEventListener('click', function(){
         score --;
         eleContainer.style.backgroundColor = 'white';
         eleScore.innerHTML = `${score}`;
-        (eleBoxVal > randomNumber)? (eleStatus.innerHTML =`Too Hight`) : (eleStatus.innerHTML =`Too Low`);
+        (eleBoxVal > randomNumber)? (eleStatus.innerHTML =`Too Hight 😅`) : (eleStatus.innerHTML =`Too Low 🤗`);
     }
 })
 
